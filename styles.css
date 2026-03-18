@@ -1,0 +1,138 @@
+
+/* Estilos personalizados para MGF HUB */
+
+:root {
+  --mgf-red: #ef4444;
+  --mgf-dark: #020617;
+}
+
+body {
+  background-color: var(--mgf-dark);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(239, 68, 68, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(239, 68, 68, 0.05) 0px, transparent 50%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Refinado */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-nav {
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Efectos de Hover Premium */
+.card-premium {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card-premium:hover {
+  transform: translateY(-8px);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5), 
+              0 0 20px rgba(239, 68, 68, 0.1);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mgf-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mgf-red);
+}
+
+/* Loader custom */
+.loader-circle {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(239, 68, 68, 0.1);
+  border-top-color: var(--mgf-red);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Ocultar scrollbar en elementos específicos */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0; transform: translateY(-10px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-out {
+  animation: fade-in-out 3s ease forwards;
+}
+
+.zoom-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+
+  overflow-y: auto;     /* ✅ scroll vertical */
+  overflow-x: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  cursor: zoom-out;
+  z-index: 9999;
+}
+
+.zoom-image {
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  max-width: 90%;
+  height: auto;
+
+  transform-origin: top center;
+  transition: transform 0.2s ease;
+}
